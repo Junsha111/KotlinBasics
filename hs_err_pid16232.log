@@ -1,0 +1,258 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3828), pid=16232, tid=24784
+#
+# JRE version:  (21.0.4) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.4+-12508038-b607.1, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Program Files\Android\Android Studio\lib\idea_rt.jar=57504:C:\Program Files\Android\Android Studio\bin -Dfile.encoding=UTF-8 com.example.kotlinbasics.BasicsKt
+
+Host: Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.2454)
+Time: Tue Mar  4 11:26:52 2025 India Standard Time elapsed time: 2.034264 seconds (0d 0h 0m 2s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000195662fb110):  JavaThread "Unknown thread" [_thread_in_vm, id=24784, stack(0x00000020eab00000,0x00000020eac00000) (1024K)]
+
+Stack: [0x00000020eab00000,0x00000020eac00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6ce539]
+V  [jvm.dll+0x85bf03]
+V  [jvm.dll+0x85e45e]
+V  [jvm.dll+0x85eb43]
+V  [jvm.dll+0x27dd06]
+V  [jvm.dll+0x6cada5]
+V  [jvm.dll+0x6bf27a]
+V  [jvm.dll+0x3541fb]
+V  [jvm.dll+0x35be36]
+V  [jvm.dll+0x3adbc6]
+V  [jvm.dll+0x3ade98]
+V  [jvm.dll+0x32691c]
+V  [jvm.dll+0x32760b]
+V  [jvm.dll+0x823959]
+V  [jvm.dll+0x3bacf8]
+V  [jvm.dll+0x80cd58]
+V  [jvm.dll+0x44ef2e]
+V  [jvm.dll+0x450691]
+C  [jli.dll+0x52ab]
+C  [ucrtbase.dll+0x14ea0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0xdfbcc]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff99c89a808, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x0000019566365750 WorkerThread "GC Thread#0"                     [id=19796, stack(0x00000020eac00000,0x00000020ead00000) (1024K)]
+  0x0000019566376690 ConcurrentGCThread "G1 Main Marker"            [id=20376, stack(0x00000020ead00000,0x00000020eae00000) (1024K)]
+  0x0000019566378ac0 WorkerThread "G1 Conc#0"                       [id=9336, stack(0x00000020eae00000,0x00000020eaf00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff99c099957]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ff99c9073f8] Heap_lock - owner thread: 0x00000195662fb110
+
+Heap address: 0x0000000702800000, size: 4056 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000702800000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+ Metaspace       used 0K, committed 0K, reserved 0K
+  class space    used 0K, committed 0K, reserved 0K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TAMS=top-at-mark-start, PB=parsable bottom
+
+Card table byte_map: [0x0000019578f50000,0x0000019579740000] _byte_map_base: 0x000001957573c000
+
+Marking Bits: (CMBitMap*) 0x0000019566365d60
+ Bits: [0x0000019579740000, 0x000001957d6a0000)
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.014 Loaded shared library C:\Program Files\Android\Android Studio\jbr\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7098b0000 - 0x00007ff7098ba000 	C:\Program Files\Android\Android Studio\jbr\bin\java.exe
+0x00007ff9fc300000 - 0x00007ff9fc563000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff9fb980000 - 0x00007ff9fba48000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff9f9bb0000 - 0x00007ff9f9f62000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9f9f70000 - 0x00007ff9fa0bb000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff9eed90000 - 0x00007ff9eeda8000 	C:\Program Files\Android\Android Studio\jbr\bin\jli.dll
+0x00007ff9efdc0000 - 0x00007ff9efddb000 	C:\Program Files\Android\Android Studio\jbr\bin\VCRUNTIME140.dll
+0x00007ff9fc0f0000 - 0x00007ff9fc2b8000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff9f9ac0000 - 0x00007ff9f9ae7000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9dc960000 - 0x00007ff9dcbf0000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.2454_none_3e0b68a2e331ad60\COMCTL32.dll
+0x00007ff9fbfe0000 - 0x00007ff9fc00a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff9fb350000 - 0x00007ff9fb3f9000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff9f96d0000 - 0x00007ff9f97fb000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff9f9a10000 - 0x00007ff9f9ab3000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff9fbf20000 - 0x00007ff9fbf4f000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff9f10d0000 - 0x00007ff9f10dc000 	C:\Program Files\Android\Android Studio\jbr\bin\vcruntime140_1.dll
+0x00007ff9cc760000 - 0x00007ff9cc7ed000 	C:\Program Files\Android\Android Studio\jbr\bin\msvcp140.dll
+0x00007ff99bd60000 - 0x00007ff99c9e3000 	C:\Program Files\Android\Android Studio\jbr\bin\server\jvm.dll
+0x00007ff9fa3f0000 - 0x00007ff9fa4a4000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff9fa4b0000 - 0x00007ff9fa556000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff9fa160000 - 0x00007ff9fa276000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff9fba80000 - 0x00007ff9fbaf4000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9f8340000 - 0x00007ff9f838e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff9e76b0000 - 0x00007ff9e76bb000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff9e76c0000 - 0x00007ff9e76f6000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9f8320000 - 0x00007ff9f8334000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff9f85e0000 - 0x00007ff9f85fa000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff9efdb0000 - 0x00007ff9efdba000 	C:\Program Files\Android\Android Studio\jbr\bin\jimage.dll
+0x00007ff9f6f50000 - 0x00007ff9f7191000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff9fbb90000 - 0x00007ff9fbf0e000 	C:\WINDOWS\System32\combase.dll
+0x00007ff9fb400000 - 0x00007ff9fb4d6000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff9cdb90000 - 0x00007ff9cdbc9000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff9fa0c0000 - 0x00007ff9fa159000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff9f3350000 - 0x00007ff9f335e000 	C:\Program Files\Android\Android Studio\jbr\bin\instrument.dll
+0x00007ff9e6a60000 - 0x00007ff9e6a80000 	C:\Program Files\Android\Android Studio\jbr\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Android\Android Studio\jbr\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.2454_none_3e0b68a2e331ad60;C:\Program Files\Android\Android Studio\jbr\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\Android\Android Studio\lib\idea_rt.jar=57504:C:\Program Files\Android\Android Studio\bin -Dfile.encoding=UTF-8 
+java_command: com.example.kotlinbasics.BasicsKt
+java_class_path (initial): C:\Users\Lenovo\AppData\Local\Android\Sdk\platforms\android-35\android.jar;C:\Users\Lenovo\AppData\Local\Android\Sdk\platforms\android-35\data\res;D:\XboxGames\Andriod Apps\KotlinBasics\app\build\generated\res\resValues\debug;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\2b86b3ea94c5fe061eaef621168c0359\transformed\core-ktx-1.15.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\2b86b3ea94c5fe061eaef621168c0359\transformed\core-ktx-1.15.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\2b86b3ea94c5fe061eaef621168c0359\transformed\core-ktx-1.15.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\c005cb149462776be81ca9036aacc4f3\transformed\core-1.15.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\c005cb149462776be81ca9036aacc4f3\transformed\core-1.15.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\c005cb149462776be81ca9036aacc4f3\transformed\core-1.15.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\ed2c578c6b469cef27f7875256902edb\transformed\annotation-experimental-1.4.1\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\ed2c578c6b469cef27f7875256902edb\transformed\annotation-experimental-1.4.1\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\ed2c578c6b469cef27f7875256902edb\transformed\annotation-experimental-1.4.1\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\d5abd4d1059a5061ac56f517a2518f3b\transformed\lifecycle-runtime-2.6.2\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\d5abd4d1059a5061ac56f517a2518f3b\transformed\lifecycle-runtime-2.6.2\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\d5abd4d1059a5061ac56f517a2518f3b\transformed\lifecycle-runtime-2.6.2\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\ab4fd5ee7c079b1e72830e8cc83fbe37\transformed\versionedparcelable-1.1.1\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\ab4fd5ee7c079b1e72830e8cc83fbe37\transformed\versionedparcelable-1.1.1\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\c592a500c610f653c4294614c1283c96\transformed\appcompat-1.7.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\c592a500c610f653c4294614c1283c96\transformed\appcompat-1.7.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\c592a500c610f653c4294614c1283c96\transformed\appcompat-1.7.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\b4e1bb7e63687bb4beeaf36e83e39e02\transformed\activity-1.8.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\b4e1bb7e63687bb4beeaf36e83e39e02\transformed\activity-1.8.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\b4e1bb7e63687bb4beeaf36e83e39e02\transformed\activity-1.8.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\78a2deaa1ece1817185735dbe347ebaf\transformed\lifecycle-viewmodel-2.6.2\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\78a2deaa1ece1817185735dbe347ebaf\transformed\lifecycle-viewmodel-2.6.2\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\78a2deaa1ece1817185735dbe347ebaf\transformed\lifecycle-viewmodel-2.6.2\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\b91bccc76f75b3ac5b49b7fa4d6e59f4\transformed\lifecycle-viewmodel-savedstate-2.6.2\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\b91bccc76f75b3ac5b49b7fa4d6e59f4\transformed\lifecycle-viewmodel-savedstate-2.6.2\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\b91bccc76f75b3ac5b49b7fa4d6e59f4\transformed\lifecycle-viewmodel-savedstate-2.6.2\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\d4c167c272897d6b9a699dc8131086f5\transformed\lifecycle-livedata-core-2.6.2\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\d4c167c272897d6b9a699dc8131086f5\transformed\lifecycle-livedata-core-2.6.2\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\d4c167c272897d6b9a699dc8131086f5\transformed\lifecycle-livedata-core-2.6.2\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\189c9b0443101e670a9a79087394ec55\transformed\savedstate-1.2.1\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\189c9b0443101e670a9a79087394ec55\transformed\savedstate-1.2.1\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\189c9b0443101e670a9a79087394ec55\transformed\savedstate-1.2.1\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\0e85cb7a2347066e5329016c82264186\transformed\appcompat-resources-1.7.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\0e85cb7a2347066e5329016c82264186\transformed\appcompat-resources-1.7.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\0e85cb7a2347066e5329016c82264186\transformed\appcompat-resources-1.7.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\01db89401cc79954f8a9bf6d52630211\transformed\vectordrawable-1.1.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\01db89401cc79954f8a9bf6d52630211\transformed\vectordrawable-1.1.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\d6453a5030ae707c7f7965716f47bed0\transformed\vectordrawable-animated-1.1.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\d6453a5030ae707c7f7965716f47bed0\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\bf7bc47e82508d244215acbe59781586\transformed\interpolator-1.0.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\bf7bc47e82508d244215acbe59781586\transformed\interpolator-1.0.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\9ad79bc58a4fe0aef39bcdf7723bc3c9\transformed\cursoradapter-1.0.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\9ad79bc58a4fe0aef39bcdf7723bc3c9\transformed\cursoradapter-1.0.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\754d8536da360f325b36ca77dc4fbb26\transformed\drawerlayout-1.1.1\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\754d8536da360f325b36ca77dc4fbb26\transformed\drawerlayout-1.1.1\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\754d8536da360f325b36ca77dc4fbb26\transformed\drawerlayout-1.1.1\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\88548e6cdb283bbc4bfbf90675af1abb\transformed\customview-1.1.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\88548e6cdb283bbc4bfbf90675af1abb\transformed\customview-1.1.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\7588db454ccfca898d0bfb7e349c9fbe\transformed\fragment-1.5.4\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\7588db454ccfca898d0bfb7e349c9fbe\transformed\fragment-1.5.4\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\7588db454ccfca898d0bfb7e349c9fbe\transformed\fragment-1.5.4\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\135e872c0dcd978fbe9f1c84ac5c74cd\transformed\loader-1.0.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\135e872c0dcd978fbe9f1c84ac5c74cd\transformed\loader-1.0.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\6124f62749a9761ad57fe0c6b1b696dd\transformed\lifecycle-livedata-2.6.2\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\6124f62749a9761ad57fe0c6b1b696dd\transformed\lifecycle-livedata-2.6.2\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\6124f62749a9761ad57fe0c6b1b696dd\transformed\lifecycle-livedata-2.6.2\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\162a94f65d1c27ae63e7b3528509cbcc\transformed\core-runtime-2.2.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\162a94f65d1c27ae63e7b3528509cbcc\transformed\core-runtime-2.2.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\162a94f65d1c27ae63e7b3528509cbcc\transformed\core-runtime-2.2.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\9b405c5ea7c2c6f444cc8fa350634db8\transformed\viewpager-1.0.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\9b405c5ea7c2c6f444cc8fa350634db8\transformed\viewpager-1.0.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\a78c7b626544800d9c7c88b8f749f791\transformed\material-1.12.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\a78c7b626544800d9c7c88b8f749f791\transformed\material-1.12.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\a78c7b626544800d9c7c88b8f749f791\transformed\material-1.12.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\c624e68c5874c32a041d48ed547e0e99\transformed\cardview-1.0.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\c624e68c5874c32a041d48ed547e0e99\transformed\cardview-1.0.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\c624e68c5874c32a041d48ed547e0e99\transformed\cardview-1.0.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\f8a21368b1c42f41e12228fc74f4a3a6\transformed\coordinatorlayout-1.1.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\f8a21368b1c42f41e12228fc74f4a3a6\transformed\coordinatorlayout-1.1.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\f8a21368b1c42f41e12228fc74f4a3a6\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\211eced2616a4dfa942f0494485f6368\transformed\constraintlayout-2.0.1\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\211eced2616a4dfa942f0494485f6368\transformed\constraintlayout-2.0.1\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\211eced2616a4dfa942f0494485f6368\transformed\constraintlayout-2.0.1\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\2f326215634898d5440fd52fd3fb0058\transformed\dynamicanimation-1.0.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\2f326215634898d5440fd52fd3fb0058\transformed\dynamicanimation-1.0.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\a5c618c461a482ff66179e278024b0dd\transformed\legacy-support-core-utils-1.0.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\a5c618c461a482ff66179e278024b0dd\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\26f03a3308e904e49aaa6ecf228236f4\transformed\documentfile-1.0.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\26f03a3308e904e49aaa6ecf228236f4\transformed\documentfile-1.0.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\f96e823c2b373856fa1bb59512ef6879\transformed\localbroadcastmanager-1.0.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\f96e823c2b373856fa1bb59512ef6879\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\08f78e6607310181bb720020a6b6ce8b\transformed\print-1.0.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\08f78e6607310181bb720020a6b6ce8b\transformed\print-1.0.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\93d86e8956b43150648f4379cf985ded\transformed\recyclerview-1.1.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\93d86e8956b43150648f4379cf985ded\transformed\recyclerview-1.1.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\93d86e8956b43150648f4379cf985ded\transformed\recyclerview-1.1.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\90e41980d6a43a54758aa39feb0aeea3\transformed\transition-1.5.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\90e41980d6a43a54758aa39feb0aeea3\transformed\transition-1.5.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\90e41980d6a43a54758aa39feb0aeea3\transformed\transition-1.5.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\5cd97b838b303a924f8a46e9c5d6e55d\transformed\viewpager2-1.0.0\jars\classes.jar;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\5cd97b838b303a924f8a46e9c5d6e55d\transformed\viewpager2-1.0.0\res;C:\Users\Lenovo\.gradle\caches\8.10.2\transforms\5cd97b838b303a924f8a46e9c5d6e55d\transformed\viewpager2-1.0.0\AndroidManifest.xml;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.9.24\9928532f12c66ad816a625b3f9984f8368ca6d2b\kotlin-stdlib-1.9.24.jar;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\androidx.annotation\annotation-jvm\1.8.1\b8a16fe526014b7941c1debaccaf9c5153692dbb\annotation-jvm-1.8.1.jar;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\androidx.arch.core\core-common\2.2.0\5e1b8b81dfd5f52c56a8d53b18ca759c19a301f3\core-common-2.2.0.jar;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\androidx.lifecycle\lifecycle-common\2.6.2\10f354fdb64868baecd67128560c5a0d6312c495\lifecycle-common-2.6.2.jar;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-android\1.6.4\f955fc8b2ad196e2f4429598440e15f7492eeb2b\kotlinx-coroutines-android-1.6.4.jar;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-core-jvm\1.6.4\2c997cd1c0ef33f3e751d3831929aeff1390cb30\kotlinx-coroutines-core-jvm-1.6.4.jar;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\1.8.22\b25c86d47d6b962b9cf0f8c3f320c8a10eea3dd1\kotlin-stdlib-jdk8-1.8.22.jar;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.8.22\4dabb8248310d833bb6a8b516024a91fd3d275c\kotlin-stdlib-jdk7-1.8.22.jar;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\androidx.collection\collection-jvm\1.4.2\bc60b5568a66d765a9fe8e266fd0c6c727e0b50b\collection-jvm-1.4.2.jar;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\androidx.constraintlayout\constraintlayout-solver\2.0.1\30988fe2d77f3fe3bf7551bb8a8b795fad7e7226\constraintlayout-solver-2.0.1.jar;C:\Users\Lenovo\.gradle\caches\modules-2\files-2.1\androidx.resourceinspection\resourceinspection-annotation\1.0.1\8c21f8ff5d96d5d52c948707f7e4d6ca6773feef\resourceinspection-annotation-1.0.1.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266338304                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4253024256                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4253024256                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;C:\Users\Lenovo\AppData\Local\Programs\Microsoft VS Code\bin;C:\adb;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-21;C:\kotlin-compiler-2.1.0\kotlinc\bin;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;C:\Users\Lenovo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Lenovo\AppData\Roaming\npm;D:\download\dartsdk-windows-x64-release\dart-sdk\bin;
+USERNAME=Lenovo
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+TMP=C:\Users\Lenovo\AppData\Local\Temp
+TEMP=C:\Users\Lenovo\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+JNI global refs:
+JNI global refs: 0, weak refs: 0
+
+JNI global refs memory usage: 0, weak refs: 0
+
+Process memory usage:
+Resident Set Size: 12984K (0% of 16612732K total physical memory with 1511932K free physical memory)
+
+OOME stack traces (most recent first):
+Classloader memory used:
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.2454)
+OS uptime: 6 days 21:16 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 10 microcode 0xe0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, rtm, adx, fma, vzeroupper, clflush, clflushopt, hv, rdtscp, f16c
+Processor Information for all 8 processors :
+  Max Mhz: 2112, Current Mhz: 1910, Mhz Limit: 1900
+
+Memory: 4k page, system-wide physical 16223M (1476M free)
+TotalPageFile size 39660M (AvailPageFile size 241M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 60M, peak: 314M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.4+-12508038-b607.1) for windows-amd64 JRE (21.0.4+-12508038-b607.1), built on 2024-10-16T17:23:34Z by "builder" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
